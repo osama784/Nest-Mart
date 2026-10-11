@@ -1,83 +1,67 @@
-# Ecommerce Web App
+# Nest-Mart
 
-Welcome to the eCommerce App! This is a fully functional online shopping platform built to provide users with a seamless shopping experience. Whether you're a developer, contributor, or user, this README will guide you through the project.❤️
+Multi-vendor e-commerce platform built with Django and Django REST Framework — product catalog across vendors and categories, shopping cart, order history, and an admin dashboard for managing products, orders, and users. Session-based authentication for customers and administrators; storefront in Django templates with Tailwind CSS and Alpine.js.
 
-## Features ⭐
+> [!NOTE]
+> No live demo — the previous PythonAnywhere deployment is no longer available. Run the app locally using the steps below.
 
--   User Authentication: Secure login and registration for customers and administrators.
+## Features
 
--   Product Catalog: Browse products by categories and vendors.
+- **Product catalog** — browse products across vendors and categories.
+- **Shopping cart** — add, update, and remove items, and apply coupons.
+- **Order history** — view past orders and their delivery/payment status from the dashboard.
+- **Admin dashboard** — Django admin for managing products, orders, and users.
+- **Session-based authentication** — for customers and administrators.
 
--   Shopping Cart: Add, update, and remove items from the cart.
+## Tech Stack
 
--   Order History: View past orders and track their status.
+- **Backend:** Python, Django, Django REST Framework
+- **Frontend:** Django templates, Tailwind CSS, Alpine.js
+- **Database:** configured through `DATABASE_URL` (PostgreSQL or SQLite)
+- **Media:** Cloudinary (product and vendor images)
 
--   Admin Dashboard: Manage products, orders, and users.
+## Getting Started
 
--   Responsive Design: Optimized for desktop, tablet, and mobile devices.
-
-## Technologies Used ⚙️
-
--   Frontend: React.js, Tailwind CSS, Redux (for state management)
-
--   Backend: Python, Django, Django Rest Framework
-
--   Database: SQlite3 (for storing products, users, and orders)
-
--   Authentication: Built-in Session Authentication
-
--   Deployment: [PythonAnyWhere.com](https://pythonanywhere.com)(Backend & Frontend)
-
-## Getting Started ⬇️
-
-Follow these steps to set up the project locally on your machine.
-
-**Prerequisites**
-
--   Python (v3 or higher)
-
--   pip (Python package manager)
-
--   npm (Node Package Manager)
-
-**Installation**
+Requires Python 3. Node.js/npm are only needed if you want to rebuild the frontend assets.
 
 1. Clone the repository:
 
 ```
-> git clone https://github.com/osama784/Ecommerce.git
-> cd Ecommerce
+> git clone https://github.com/osama784/Nest-Mart.git
+> cd Nest-Mart
 ```
 
-2. Install Dependencies:
-
--   For the frontend:
-
-```
-> npm install
-```
-
--   For the backend:
+2. Install the Python dependencies:
 
 ```
 > python -m venv venv
+> source venv/bin/activate   # Windows: venv\Scripts\activate
 > pip install -r requirements.txt
 ```
 
-3. Run the app:
+3. Create a `.env` file in the repository root with your own values for:
+
+- `DJANGO_SECRET_KEY`
+- `DATABASE_URL` (e.g. a PostgreSQL connection string, or `sqlite:///db.sqlite3`)
+- `CLOUDINARY_CLOUD_NAME`, `CLOUDINARY_PUBLIC_API_KEY`, `CLOUDINARY_SECRET_API_KEY` (image storage)
+
+4. Run the app:
 
 ```
-> npm start
+> cd Ecommerce
+> python manage.py migrate
+> python manage.py runserver
 ```
 
-There you have the app installed on your local mahine🔥
+Optional — rebuild the frontend assets (the built CSS and JS are already committed):
 
-## Contact ✉️
+```
+> npm install
+> npm run dev          # Tailwind CSS in watch mode
+> npm run build:alpine # bundle Alpine.js helpers
+```
 
-If you have any questions or feedback, feel free to reach out:
+## Contact
 
--   Email: osamadoage8@gmail.com
-
--   Portfolio: https://portfolio-osama784s-projects.vercel.app/
-
--   Project Link: https://osamadoage2.pythonanywhere.com
+- Email: osamadoage8@gmail.com
+- Portfolio: https://osamadoage.vercel.app/
