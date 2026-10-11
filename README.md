@@ -3,7 +3,7 @@
 Multi-vendor e-commerce platform built with Django and Django REST Framework — product catalog across vendors and categories, shopping cart, order history, and an admin dashboard for managing products, orders, and users. Session-based authentication for customers and administrators; storefront in Django templates with Tailwind CSS and Alpine.js.
 
 > [!NOTE]
-> No live demo — the previous PythonAnywhere deployment is no longer available. Run the app locally using the steps below.
+> No live demo — run the app locally using the steps below.
 
 ## Features
 
